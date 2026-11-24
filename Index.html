@@ -1,1 +1,139 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#401b25">
+  <meta name="description" content="أذكار المسلم — مساحة هادئة للأذكار والرقية الشرعية.">
+  <title>أذكار المسلم | MUSLIM ADHKAR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ornament ornament-top" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#" data-page="home" aria-label="الصفحة الرئيسية">
+      <span class="brand-mark">۞</span>
+      <span><strong>أذكار المسلم</strong><small>MUSLIM ADHKAR</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="التنقل الرئيسي">
+      <button class="nav-link active" data-page="home">الرئيسية</button>
+      <button class="nav-link" data-page="morning">الصباح</button>
+      <button class="nav-link" data-page="evening">المساء</button>
+      <button class="nav-link" data-page="ruqya">الرقية</button>
+      <button class="nav-link" data-page="home-prayers">المنزل</button>
+      <button class="nav-link" data-page="protection">التحصين</button>
+    </nav>
+    <button class="icon-button" id="settings-open" aria-label="الإعدادات" title="الإعدادات">⚙</button>
+  </header>
 
+  <main id="app" class="main-shell">
+    <section id="home-page" class="page active">
+      <div class="hero-panel">
+        <div class="hero-copy">
+          <span class="eyebrow">وَرْدُكَ اليومي</span>
+          <h1>طمأنينةُ القلب<br><em>بذكرِ الله</em></h1>
+          <p>لحظات هادئة تملؤها السكينة، وخطوة صغيرة كل يوم نحو دوام الذكر.</p>
+          <button class="gold-button" data-page="morning">ابدأ أذكارك <span>←</span></button>
+        </div>
+        <div class="hero-seal" aria-hidden="true"><span>وَاذْكُرُوا<br>اللَّهَ كَثِيرًا</span><b>۞</b></div>
+        <div class="hero-date"><span id="today-gregorian">—</span><span id="today-hijri">التاريخ الهجري حسب إعدادات جهازك</span></div>
+      </div>
+
+      <div class="section-heading"><div><span class="eyebrow">مساحتك اليومية</span><h2>أقسام الأذكار</h2></div><span class="heading-flourish">❧</span></div>
+      <div class="category-grid">
+        <button class="category-card morning-card" data-page="morning"><span class="card-symbol">☼</span><strong>أذكار الصباح</strong><small>بداية يوم يملؤها الذكر</small><span class="card-arrow">←</span></button>
+        <button class="category-card evening-card" data-page="evening"><span class="card-symbol">☾</span><strong>أذكار المساء</strong><small>اختم يومك بالسكينة</small><span class="card-arrow">←</span></button>
+        <button class="category-card" data-page="ruqya"><span class="card-symbol">۞</span><strong>الرقية الشرعية</strong><small>آيات وأدعية مأثورة</small><span class="card-arrow">←</span></button>
+        <button class="category-card" data-page="home-prayers"><span class="card-symbol">⌂</span><strong>أذكار المنزل</strong><small>الدخول والخروج</small><span class="card-arrow">←</span></button>
+        <button class="category-card" data-page="protection"><span class="card-symbol">◇</span><strong>أذكار التحصين</strong><small>أذكار ثابتة للتحصن</small><span class="card-arrow">←</span></button>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="surface progress-panel">
+          <div class="section-heading compact"><div><span class="eyebrow">إنجاز اليوم</span><h2>خطواتك المباركة</h2></div><span class="progress-percent" id="daily-percent">٠٪</span></div>
+          <div class="progress-track"><span id="daily-progress"></span></div>
+          <p id="daily-progress-text" class="muted">ابدأ وردك اليومي، وسيظهر تقدمك هنا.</p>
+        </article>
+        <article class="surface last-read">
+          <span class="eyebrow">متابعة القراءة</span><h2>آخر موضع وصلت إليه</h2>
+          <p id="last-read-text" class="muted">لم تبدأ القراءة بعد.</p>
+          <button class="text-button" id="continue-reading">متابعة القراءة ←</button>
+        </article>
+      </div>
+      <article class="daily-quote">
+        <span class="eyebrow">ذكر مختار</span>
+        <p>«ألا بذكرِ اللهِ تطمئنُّ القلوبُ»</p>
+        <small>سورة الرعد، الآية ٢٨</small>
+      </article>
+    </section>
+
+    <section id="reader-page" class="page">
+      <div class="reader-top">
+        <button class="back-button" data-page="home">→ الرئيسية</button>
+        <div><span class="eyebrow" id="reader-eyebrow">وِردُ اليوم</span><h1 id="reader-title">أذكار الصباح</h1></div>
+        <button class="icon-button" id="reader-search-open" aria-label="بحث">⌕</button>
+      </div>
+      <div class="reader-meta"><span id="item-position">الذكر ١ من ١</span><span id="section-completed">٠ مكتمل</span></div>
+      <div class="reader-progress"><span id="reader-progress-bar"></span></div>
+      <article class="dhikr-card" id="dhikr-card">
+        <div class="card-corner corner-a">۞</div><div class="card-corner corner-b">۞</div>
+        <div class="dhikr-type" id="dhikr-type">ذِكْرٌ مَأْثُور</div>
+        <p class="dhikr-text" id="dhikr-text">—</p>
+        <div class="repeat-label" id="repeat-label">عدد التكرار</div>
+        <button class="counter-ring" id="count-button" aria-label="اضغط للتسبيح">
+          <svg viewBox="0 0 140 140" aria-hidden="true"><circle class="ring-bg" cx="70" cy="70" r="61"></circle><circle class="ring-value" id="ring-value" cx="70" cy="70" r="61"></circle></svg>
+          <span><strong id="counter-number">١</strong><small id="counter-caption">متبقية</small></span>
+        </button>
+        <div class="counter-actions">
+          <button class="soft-button" id="reset-counter">↺ إعادة العداد</button>
+          <button class="soft-button" id="favorite-toggle">♡ المفضلة</button>
+        </div>
+        <div class="source-box"><strong>المصدر والتخريج</strong><p id="dhikr-source">—</p></div>
+      </article>
+      <div class="reader-controls">
+        <button class="outline-button" id="previous-item">السابق</button>
+        <div class="reader-tools"><button class="tool-button" id="copy-dhikr" title="نسخ">نسخ</button><button class="tool-button" id="share-dhikr" title="مشاركة">مشاركة</button></div>
+        <button class="gold-button next-button" id="next-item">التالي ←</button>
+      </div>
+      <p class="reader-hint" id="reader-hint">اضغط على الدائرة لإنقاص العدد المتبقي.</p>
+    </section>
+
+    <section id="favorites-page" class="page">
+      <div class="page-intro"><span class="eyebrow">ما اخترته بعناية</span><h1>الأذكار المفضلة</h1><p>اجمع هنا الأذكار التي تحب الرجوع إليها.</p></div>
+      <div id="favorites-list" class="favorites-list"></div>
+    </section>
+
+    <section id="settings-page" class="page">
+      <div class="page-intro"><span class="eyebrow">تجربة القراءة</span><h1>الإعدادات</h1><p>اضبط المساحة بما يناسب راحتك.</p></div>
+      <div class="surface settings-list">
+        <label class="setting-row"><span><strong>حجم خط الذكر</strong><small>تحكم في وضوح النص</small></span><span class="font-controls"><button id="font-down" aria-label="تصغير الخط">−</button><b id="font-size-value">٢٨</b><button id="font-up" aria-label="تكبير الخط">+</button></span></label>
+        <label class="setting-row"><span><strong>الاهتزاز عند التسبيح</strong><small>يعمل على الأجهزة والمتصفحات الداعمة</small></span><input type="checkbox" id="vibration-setting"></label>
+        <label class="setting-row"><span><strong>وضع القراءة الهادئ</strong><small>تقليل الزخارف والمؤثرات</small></span><input type="checkbox" id="quiet-setting"></label>
+        <div class="setting-row"><span><strong>إعادة تقدم اليوم</strong><small>مسح إنجاز الأذكار لهذا اليوم فقط</small></span><button class="danger-button" id="reset-day">إعادة التقدم</button></div>
+      </div>
+      <div class="surface about-box"><h2>عن المشروع والمصادر</h2><p>منصة مساعدة لقراءة الأذكار، وليست جهة إفتاء. أُدرجت النصوص مع إحالات مختصرة إلى مصادرها، ويجب مراجعة طبعات المصادر المعتمدة عند التحقيق أو النشر العلمي. لا يُقصد بالرقية إهمال التشخيص أو العلاج الطبي.</p></div>
+    </section>
+
+    <section id="search-page" class="page">
+      <div class="page-intro"><span class="eyebrow">ابحث في النصوص</span><h1>البحث عن ذكر</h1></div>
+      <input class="search-input" id="search-input" type="search" placeholder="اكتب كلمة من الذكر..." autocomplete="off">
+      <div id="search-results" class="favorites-list"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="التنقل السفلي">
+    <button class="active" data-page="home"><span>⌂</span><small>الرئيسية</small></button>
+    <button data-page="morning"><span>☼</span><small>الصباح</small></button>
+    <button data-page="evening"><span>☾</span><small>المساء</small></button>
+    <button data-page="favorites"><span>♡</span><small>المفضلة</small></button>
+    <button data-page="settings"><span>⚙</span><small>الإعدادات</small></button>
+  </nav>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="search-modal" hidden><div class="modal"><button class="modal-close" id="search-close" aria-label="إغلاق">×</button><h2>ابحث عن ذكر</h2><input class="search-input" id="modal-search-input" type="search" placeholder="اكتب كلمة من الذكر..."><div id="modal-search-results"></div></div></div>
+  <div class="ornament ornament-bottom" aria-hidden="true"></div>
+  <script src="js/app.js"></script>
+</body>
+            </html>
